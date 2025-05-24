@@ -179,6 +179,78 @@ header nav ul li a.active {
   background: #444;
 }
 
+/* Image buttons for lingerie subcategories */
+.subcategories-content .sub-btn-with-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+  color: #333;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  min-width: 150px;
+  max-width: 200px;
+  margin: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.subcategories-content .sub-btn-with-image:hover {
+  background: #f8f8f8;
+  border-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sub-btn-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+}
+
+.sub-btn-text {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+  color: #333;
+}
+
+/* Adjust subcategories content for better layout with images */
+.subcategories-content {
+  max-width: 95%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Grid layout for image buttons */
+.subcategories-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subcategories-content h2,
+.subcategories-content h3,
+.subcategories-content p {
+  width: 100%;
+  text-align: center;
+}
+
+/* Create a flex container for buttons when they have images */
+.subcategories-content:has(.sub-btn-with-image) {
+  display: block;
+}
+
+.subcategories-content:has(.sub-btn-with-image) > .sub-btn-with-image {
+  display: inline-flex;
+  vertical-align: top;
+}
+
 #closeSubcategories {
   position: absolute;
   top: 20px;

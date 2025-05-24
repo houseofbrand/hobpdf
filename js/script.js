@@ -24,7 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
         subcategories = ['Kids Watches', 'Men Watches', 'Women Watches'];
         folderName = 'Watches';
       } else if (dataCategory === 'lingerie') {
-        subcategories = ['Babydoll Dress Wholesale', 'Babydoll-full', 'Bikni Set Collection', 'Lingerie Set Collection', 'Lingerie with Robe', 'Premium Baby Doll', 'Wholesale Co-ord Lingerie Sets', 'Wholesale Honeymoon Wear'];
+        subcategories = [
+          { name: 'Amour Babydoll', image: 'amour-babydoll.jpg' },
+          { name: 'Babydoll Dress', image: 'babydoll-dress.png' },
+          { name: 'Babydoll-full', image: 'free-size-lingerie.png' },
+          { name: 'Co-ord Lingerie Sets', image: 'co-ord-lingerie-sets.jpg' },
+          { name: 'Honeymoon Wear', image: 'honeymoon-wear.png' },
+          { name: 'Lingerie Set Collection', image: 'free-size-lingerie.png' },
+          { name: 'Lingerie with Robe', image: 'lingerie-with-robe.png' },
+          { name: 'Premium Baby Doll', image: 'premium-babydoll.png' },
+          { name: 'Swimwear and Bikinis', image: 'swimwear-and-bikinis.png' }
+        ];
         folderName = 'Lingerie';
       } else if (dataCategory === 'accessorygiftset') {
         subcategories = ['Men Belt Wallet Set'];
@@ -36,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // For categories with only one subcategory, open PDF directly
       if (subcategories.length === 1) {
-        const pdfUrl = `https://houseofbrand.github.io/sourcingwala/assets/Pdfs/${folderName}/${encodeURIComponent(subcategories[0])}.pdf`;
+        const subItem = typeof subcategories[0] === 'object' ? subcategories[0].name : subcategories[0];
+        const pdfUrl = `https://houseofbrand.github.io/sourcingwala/assets/Pdfs/${folderName}/${encodeURIComponent(subItem)}.pdf`;
         window.open(pdfUrl, '_blank');
         return;
       }
@@ -51,10 +62,27 @@ document.addEventListener("DOMContentLoaded", () => {
       // Create subcategory buttons
       subcategories.forEach(sub => {
         const btn = document.createElement('button');
-        btn.textContent = sub;
+        const isObject = typeof sub === 'object';
+        const subName = isObject ? sub.name : sub;
+        
+        if (isObject && sub.image) {
+          // Create button with image for lingerie
+          btn.innerHTML = `
+            <img src="assets/images/lingerie-assets/${sub.image}" alt="${subName}" class="sub-btn-image">
+            <span class="sub-btn-text">${subName}</span>
+          `;
+        } else {
+          // Create text-only button for other categories
+          btn.textContent = subName;
+        }
+        
         btn.classList.add('sub-btn');
+        if (isObject && sub.image) {
+          btn.classList.add('sub-btn-with-image');
+        }
+        
         btn.addEventListener('click', function () {
-          const pdfUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(`https://houseofbrand.github.io/sourcingwala/assets/Pdfs/${folderName}/${encodeURIComponent(sub)}.pdf`)}&embedded=true`;
+          const pdfUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(`https://houseofbrand.github.io/sourcingwala/assets/Pdfs/${folderName}/${encodeURIComponent(subName)}.pdf`)}&embedded=true`;
           window.open(pdfUrl, '_blank');
         });
         subCatContainer.appendChild(btn);
