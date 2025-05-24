@@ -88,10 +88,39 @@ header nav ul li a.active {
 
 /* Categories Section */
 .categories {
+  padding: 40px 20px;
+}
+
+/* Category Section with Title */
+.category-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: #000;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Category Grid */
+.category-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 40px 20px;
   gap: 20px;
 }
 
