@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         subcategories = ['Kids Watches', 'Men Watches', 'Women Watches'];
         folderName = 'Watches';
       } else if (dataCategory === 'lingerie') {
-        subcategories = ['Baby Doll', 'Baby Doll Dress', 'Babydoll with Robe', 'Co-Ord Set Babydoll', 'Honey Moon Dress', 'Lingerie & Bikni Set', 'Premium Baby Doll'];
+        subcategories = ['Babydoll Dress Wholesale', 'Babydoll-full', 'Bikni Set Collection', 'Lingerie Set Collection', 'Lingerie with Robe', 'Premium Baby Doll', 'Wholesale Co-ord Lingerie Sets', 'Wholesale Honeymoon Wear'];
         folderName = 'Lingerie';
       } else if (dataCategory === 'accessorygiftset') {
         subcategories = ['Men Belt Wallet Set'];
