@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pdfUrl = `https://houseofbrand.github.io/sourcingwala/assets/Pdfs/Lingerie/Amour Babydoll.pdf`;
       } else if (dataCategory === 'babydoll-dress') {
         pdfUrl = `https://houseofbrand.github.io/sourcingwala/assets/Pdfs/Lingerie/Babydoll Dress.pdf`;
-      } else if (dataCategory === 'babydoll-full') {
-        pdfUrl = `https://houseofbrand.github.io/sourcingwala/assets/Pdfs/Lingerie/Babydoll-full.pdf`;
       } else if (dataCategory === 'coord-lingerie-sets') {
         pdfUrl = `https://houseofbrand.github.io/sourcingwala/assets/Pdfs/Lingerie/Co-ord Lingerie Sets.pdf`;
       } else if (dataCategory === 'honeymoon-wear') {
